@@ -1,0 +1,9 @@
+
+#endpoint: ''
+endpoint: https://us1.prisma.sh/antonio-v-palmeira-f38b67/hackernews-node/dev
+
+datamodel: datamodel.prisma
+
+generate:
+  - generator: javascript-client
+    output: ../src/generated/prisma-client
