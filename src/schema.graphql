@@ -7,7 +7,7 @@ type Query {
     skip: Int
     first: Int
     orderBy: LinkOrderByInput
-  ): [Link!]!
+  ): Feed!
 
   link(id: ID!): Link
 
@@ -70,6 +70,12 @@ type Subscription {
   newLink: Link
 
   newVote: Vote
+}
+
+type Feed {
+  links: [Link!]!
+
+  count: Int!
 }
 
 enum LinkOrderByInput {
