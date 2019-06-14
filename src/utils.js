@@ -14,30 +14,7 @@ function getUserId(context) {
   throw new Error('Not authenticated')
 }
 
-findLink = (links, id, del, sub) => {
-  let res = null
-
-  links.forEach((link, index) => {
-    if (link.id === id) {
-      res = {...link}
-
-      if (del) links.splice(index, 1)
-
-      if (sub) {
-        res = {
-          id: link.id,
-          url: sub.url || link.url,
-          description: sub.desc || link.description
-        }
-        links.splice(index, 1, res)
-      }
-    }
-  })
-  return res
-}
-
 module.exports = {
-  findLink,
   APP_SECRET,
   getUserId
 }

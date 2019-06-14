@@ -1,9 +1,4 @@
 
-/**
- * FIX:
- * > updateLink
- * > deleteLink
- */
 
 const { GraphQLServer } = require('graphql-yoga')
 const { prisma } = require('./generated/prisma-client')
