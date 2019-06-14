@@ -2,7 +2,11 @@
 type Query {
   info: String!
 
-  feed(filter: String!): [Link!]!
+  feed(
+    filter: String
+    skip: Int
+    first: Int
+  ): [Link!]!
 
   link(id: ID!): Link
 
@@ -65,4 +69,13 @@ type Subscription {
   newLink: Link
 
   newVote: Vote
+}
+
+enum LinkOrderByInput {
+  description_ASC
+  description_DESC
+  url_ASC
+  url_DESC
+  createdAt_ASC
+  createdAt_DESC
 }
