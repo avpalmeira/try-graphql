@@ -5,6 +5,8 @@ type Query {
   feed: [Link!]!
 
   link(id: ID!): Link
+
+  user(id: ID!): User
 }
 
 type Mutation {
@@ -41,6 +43,8 @@ type User {
   email: String!
 
   links: [Link!]!
+
+  votes: [Vote!]!
 }
 
 type Vote {
