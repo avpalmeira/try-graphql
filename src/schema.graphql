@@ -6,6 +6,7 @@ type Query {
     filter: String
     skip: Int
     first: Int
+    orderBy: LinkOrderByInput
   ): [Link!]!
 
   link(id: ID!): Link
