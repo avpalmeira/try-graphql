@@ -1,3 +1,4 @@
+
 type Link {
   id: ID! @id
 
@@ -8,6 +9,8 @@ type Link {
   url: String!
 
   postedBy: User
+
+  votes: [Vote!]!
 }
 
 type User {
@@ -20,4 +23,14 @@ type User {
   password: String!
 
   links: [Link!]!
+
+  votes: [Vote!]!
+}
+
+type Vote {
+  id: ID! @id
+
+  link: Link!
+
+  user: User!
 }
