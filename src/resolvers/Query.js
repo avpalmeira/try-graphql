@@ -28,7 +28,7 @@ async function feed(root, args, context) {
 }
 
 function info(root, args, context, info) {
-  return info
+  return JSON.stringify(info)
 }
 
 function link(root, args, context, info) {
@@ -43,4 +43,5 @@ module.exports = {
   feed,
   link,
   user,
+  info,
 }
