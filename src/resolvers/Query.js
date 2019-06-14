@@ -1,6 +1,16 @@
 
-function feed(root, args, context) {
-  return context.prisma.links()
+async function feed(root, args, context) {
+  const where = args.filter ? {
+    OR: [
+      { description_contains: args.filter },
+      { url_contains: args.filter },
+    ],
+  } : {}
+
+  const links = await context.prisma.links({
+    where
+  })
+  return links
 }
 
 function info(root, args, context, info) {
